@@ -178,11 +178,11 @@ export class Level2Component {
 
   private getFreeRow(colIx:number): number{
 
-    for(let i = 0;i<4;i++)
+    for(let i = 0;i<this.boardContent.length;i++)
     {
-      if(this.boardContent[i][colIx]==0)
+      if(!this.boardContent[i][colIx])
       {
-        if(i===4||(i+1<4&&this.boardContent[i+1][colIx])!==0)
+        if(i===this.boardContent.length-1||(i+1<this.boardContent.length&&this.boardContent[i+1][colIx]))
         {
           return i;
         }
